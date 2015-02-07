@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "name": "JogoDaMemoriaHackton",
-  "description": "A template with the bare minimum structure",
+  "name": "MemoryGame-FireFoxOS",
+  "description": "It´s a memory game in javascript for FireFox OS",
   "launch_path": "/index.html",
   "icons": {
     "16": "/img/icons/icon16x16.png",
@@ -10,7 +10,7 @@
     "128": "/img/icons/icon128x128.png"
   },
   "developer": {
-    "name": "Your name",
+    "name": "Jonatan Dias Pinheiro",
     "url": "http://example.com"
   },
   "type": "privileged",
