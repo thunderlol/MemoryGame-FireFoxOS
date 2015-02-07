@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Privileged app</title>
+        <meta name="description" content="A privileged app stub">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--
+          viewport allows you to control how mobile browsers will render your content.
+          width=device-width tells mobile browsers to render your content across the
+          full width of the screen, without being zoomed out (by default it would render
+          it at a desktop width, then shrink it to fit.)
+          Read more about it here:
+          https://developer.mozilla.org/Mozilla/Mobile/Viewport_meta_tag
+        -->
+        <meta name="viewport" content="width=device-width">
+        <!--<link rel="stylesheet" href="css/app.css">-->
+        <link rel="stylesheet" href="css/new_style.css">	
+        <link rel="stylesheet" href="fonts/specimen_files/specimen_stylesheet.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
+
+        <!--
+        Inline JavaScript code is not allowed for privileged and certified apps,
+        due to Content Security Policy restrictions.
+        You can read more about it here: https://developer.mozilla.org/Apps/CSP
+        Plus keeping your JavaScript separated from your HTML is always a good practice!
+
+        We're also using the 'defer' attribute. This allows us to tell the browser that
+        it should not wait for this file to load before continuing to load the rest of
+        resources in the page. Then, once everything has been loaded, it will parse and
+        execute the deferred files.
+        Read about defer: https://developer.mozilla.org/Web/HTML/Element/script#attr-defer
+        -->
+        <script type="text/javascript" src="js/app.js" defer></script>
+		<script type="text/javascript" src="js/game.js"></script>
+        <!--
+        The following two lines are for loading the localisations library
+        and the localisation data-so people can use the app in their
+        own language (as long as you provide translations).
+        -->
+        <link rel="prefetch" type="application/l10n" href="data/locales.ini" />
+        <script type="text/javascript" src="js/libs/l10n.js" defer></script>
+		<!--<link  rel="stylesheet" href="css/game.css">-->
+    </head>
+    <body>
+        <div  id="main" class="main">
+            
+            <div class="game-screen">
+                <header >
+                    <div class="score">
+                        <span>Score:</span>
+                        <span id="score"></span>
+                    </div>
+                    <input type="button"  class="button_game" value="" onclick="GameControl.createGame(nivelAtual);"/> </header>
+                
+                <div id="game" class="gameContainer" data-role="content">
+                </div>
+                <footer data-role="footer" data-position="fixed" id="control">
+                        <input type="button"  class="button_back" value="" onclick="back_button()"/> 
+                        <span id="timer">00:00</span>
+				</footer>
+		    </div>
+            
+            <div id="final" class="">
+                <p class="text"><strong>Fim de jogo</strong><br/>Em <span id="final_time">00:00</span>min. sua pontuação foi:</p>
+                <div id="final_score" class="icon_final">0000</div>
+                <button name="button" onclick="back_button()"></button>
+                
+            </div>
+            <div class="init">
+                <p class="text"><strong>Memory Game</strong></p>
+                <div class="icon_init"></div>
+					<div class="buttons_levels">
+						<button name="button" onclick="GameControl.createGame('Fácil');">Fácil</button>
+						<button name="button" onclick="GameControl.createGame('Médio');">Médio</button>
+						<button name="button" onclick="GameControl.createGame('Dificil');">Díficil</button>
+					</div>
+            </div>            
+            
+        </div>
+    </body>
+</html>
